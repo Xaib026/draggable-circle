@@ -5,6 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
 	<title>Document</title>
 
 	<style>
@@ -38,7 +42,7 @@
 		}
 
 		body.page-people .circle-wrapper #circle b {
-			font-family: "Plantin W01 Light", "Georgia", "Times", "Times New Roman", serif;
+			font-family: 'Rajdhani' !important;
 			font-size: 24px;
 			line-height: 24px;
 			font-size: 1.8rem;
@@ -68,6 +72,10 @@
 
 		body.page-people .circle-wrapper #circle b.clickable span {
 			border-bottom: 1px solid #232323;
+		}
+
+		div#circle b span:hover {
+			color: #fec3a7 !important;
 		}
 
 		body.page-people .circle-wrapper #circle b span {
@@ -625,7 +633,7 @@
 				var n = $("#circle"),
 					a = n.find("b").length;
 				e();
-				var o, i = (a - Math.round(Math.random() * a * .45 + .5 * a)) / a * 0,
+				var o, i = (a - Math.round(Math.random() * a * .45 + .5 * a)) / a * 360,
 					c = new TimelineLite({
 						onComplete: function () {
 							Draggable.create(n, {
@@ -696,29 +704,29 @@
 					})
 				}
 			}
-			// var i = "everyone";
-			// $(".person-overlay .close-person a").click((function () {
-			// 	$(".person-overlay:visible").fadeOut("fast")
-			// })), $(document).keyup((function (e) {
-			// 	27 == e.keyCode && $(".person-overlay:visible").fadeOut("fast")
-			// })), $("#people-categories-overlay .sub-menu a").click((function (e) {
-			// 	e.preventDefault();
-			// 	var t = $(this).data("arrange");
-			// 	$("#people-categories-overlay").fadeOut("fast", (function () {
-			// 		r(t)
-			// 	}))
-			// })), $("header.header a.arrange").click((function (e) {
-			// 	e.preventDefault(), $("#people-categories-overlay").fadeIn("fast"),
-			// 	 $("body").addClass("overlay")
-			// })), $("#people-categories-overlay .close-people-categories a").click((function (e) {
-			// 	e.preventDefault(), $("#people-categories-overlay").fadeOut("fast"),
-			// 	 $("body").removeClass("overlay")
-			// })),
-			o(), $(window).on("resize", (function () {
-				var e = 1.2 * $(window).width(),
-					t = 1.2 * $(window).height(),
-					n = Math.max(e, t)
-			}))
+			var i = "everyone";
+			$(".person-overlay .close-person a").click((function () {
+				$(".person-overlay:visible").fadeOut("fast")
+			})), $(document).keyup((function (e) {
+				27 == e.keyCode && $(".person-overlay:visible").fadeOut("fast")
+			})), $("#people-categories-overlay .sub-menu a").click((function (e) {
+				e.preventDefault();
+				var t = $(this).data("arrange");
+				$("#people-categories-overlay").fadeOut("fast", (function () {
+					r(t)
+				}))
+			})), $("header.header a.arrange").click((function (e) {
+				e.preventDefault(), $("#people-categories-overlay").fadeIn("fast"),
+					$("body").addClass("overlay")
+			})), $("#people-categories-overlay .close-people-categories a").click((function (e) {
+				e.preventDefault(), $("#people-categories-overlay").fadeOut("fast"),
+					$("body").removeClass("overlay")
+			})),
+				o(), $(window).on("resize", (function () {
+					var e = 1.2 * $(window).width(),
+						t = 1.2 * $(window).height(),
+						n = Math.max(e, t)
+				}))
 		}))
 	}));
 
