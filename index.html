@@ -9,18 +9,19 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	<title>Document</title>
 
 	<style>
-		@font-face {
+		/* @font-face {
 			font-family: "Plantin W01 Light";
 			src: url("fonts/Plantin.woff") format("woff"), url("fonts/Plantin.ttf") format("truetype");
-		}
-
-
+		} */
 
 		body {
-			font-family: sans-serif;
+			font-family: Rajdhani !important;
+
+			/* font-family: sans-serif; */
 		}
 
 		body.page-people {
@@ -53,9 +54,9 @@
 		}
 
 		body.page-people .circle-wrapper #circle b {
-			/* font-family: 'Rajdhani' !important; */
+			font-family: 'Rajdhani' !important;
 			/* font-family: "Plantin W01 Light", "Georgia", "Times", "Times New Roman", serif; */
-			font-family: "Plantin W01 Light";
+			/* font-family: "Plantin W01 Light"; */
 			font-size: 24px;
 			line-height: 24px;
 			font-size: 1.8rem;
@@ -84,7 +85,7 @@
 		body.page-people .circle-wrapper #circle b.clickable span {
 			border-bottom: 1px solid #232323;
 			cursor: pointer;
-			transition: 0.5s ease;
+			transition: 0.1s ease;
 		}
 
 		div#circle b span:hover {
@@ -96,10 +97,106 @@
 			color: #232323;
 			float: right;
 		}
+
+		.popup img {
+			width: 14%;
+			margin: 35px 0;
+			height: auto;
+		}
+
+		header.header {
+			/*     z-index: unset; */
+			z-index: 10;
+		}
+
+		.container {
+			width: 100% !important;
+		}
+
+		.popup {
+			background-color: #000;
+			border-radius: 0;
+			text-align: center;
+			height: 900px;
+			max-width: 100%;
+			top: 393%;
+			left: 0;
+			z-index: 18 !important;
+			position: absolute;
+			visibility: hidden;
+			padding: 90px 40px;
+		}
+
+		.popup p,
+		.popup h2 {
+			color: #fff;
+			font-size: 16px;
+		}
+
+		.open-popup {
+			visibility: visible;
+			top: 0;
+		}
+
+		.btn {
+			float: right;
+			cursor: pointer;
+		}
+
+		.btn i.fa.fa-close {
+			font-size: 18px;
+		}
+
+		.border-line:hover {
+			text-decoration: underline 2px #fec3a7 !important;
+			cursor: pointer;
+		}
+
+		.content-wrap {
+			position: absolute;
+			top: 80%;
+			left: 2%;
+		}
+
+		.content-wrap p {
+			color: #333366;
+			font-size: 18px;
+			font-family: Rajdhani !important;
+		}
+
+		.circle-wrapper {
+			position: relative;
+		}
+
+		#circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		@media (max-width: 768px) {
+			.content-wrap {
+				top: 86%;
+			}
+
+			.content-wrap p {
+				font-size: 14px;
+				line-height: 17px;
+				font-family: Rajdhani !important;
+
+			}
+
+			#myLink {
+				cursor: pointer;
+			}
+		}
 	</style>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-people">
+
 	<div class="circle-wrapper">
 		<div id="circle">
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/xinyi-wang-67982324/"
@@ -143,7 +240,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -225,7 +322,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -307,7 +404,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -389,7 +486,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -471,7 +568,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -554,7 +651,7 @@
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/martha-davis-0254481/"
 					data-id="martha-davis">Martha Davis</span></b>
 			<b class="clickable"><span data-link="https://www.lunaikuta.com/" data-id="luna-ikuta">Luna Ikuta</span></b>
-			<b><span data-popup class="border-line">Lisa Krohn</span></b>
+			<b><span data-popup onclick="popupOpen()" class="border-line">Lisa Krohn</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/kevineslater/?originalSubdomain=fi"
 					data-id="kevin-slater">Kevin Slater</span></b>
 			<b class="clickable"><span data-link="https://www.linkedin.com/in/junjiepiao/" data-id="junjie-piao">Junjie
@@ -597,6 +694,34 @@
 
 		</div>
 	</div>
+	<div class="container">
+		<div class="popup" id="popup">
+			<button class="btn" onclick="popupOpen()"><i class="fa fa-close"></i></button>
+			<img width="720" height="480" class="no-lazy"
+				src="https://krohndesign.com/wp-content/uploads/2023/01/1_lisa_working-1.jpg" alt="Logo">
+			<h2>Lisa Krohn</h2>
+			<p>
+				Apart from her work as founder and Creative Director of Krohn Design, Lisa teaches the practice,
+				theory and history of design and innovation at USC Iovine and Young Academy.<br><br>
+
+				She received a Master of Fine Arts in Design from Cranbrook Academy of Art and a Bachelor of Fine
+				Arts in Art and Art History from Brown University, also earning a Fulbright fellowship to Milan to
+				work with architect and designer, Mario Bellini.Her designs for prosthetic personal digital objects
+				have earned numerous design accolades including Grand Prize in the Forma Finlandia competition and
+				the Daimler Chrysler Award for Innovation in Design.<br><br>
+
+				Krohn’s work is in museums including the New York and San Francisco Museums of Modern Art and the
+				Cooper Hewitt Smithsonian Design Museum<br><br>
+			</p>
+		</div>
+	</div>
+
+	<div class="content-wrap">
+		<p>
+			We are grateful to each of you for turning your talent and<br> dedication to working with Lisa Krohn and
+			Krohn Design. <br>The best ideas come from collaboration-thank you all for yours!
+		</p>
+	</div>
 </body>
 
 </html>
@@ -606,6 +731,12 @@
 <script src='js/Draggable.min.js'></script>
 <script src='js/ThrowPropsPlugin.min.js'></script>
 <script>
+	// if (document.querySelectorAll('[data-popup]').length > 0) {
+	// document.querySelector('[data-popup]').addEventListener('click', () => {
+	// 	console.log('clcik');
+	// });
+
+	// }
 	jQuery((function ($) {
 		var e = 200,
 			t = function e(t) {
@@ -690,8 +821,8 @@
 					delay: 1,
 					rotation: i
 				})), c.add(TweenLite.to(n, 1, {
-					scale: 1.1,
-					"margin-left": "-8rem"
+					scale: 0.85,
+					"margin-left": "-30rem"
 				})))
 			}
 
@@ -742,5 +873,31 @@
 				}))
 		}))
 	}));
+
+
+
+	let popup = document.getElementById("popup");
+
+	var openOpn = true;
+	function popupOpen() {
+		if (openOpn) {
+			popup.classList.add("open-popup");
+			openOpn = false;
+		}
+		else {
+			popup.classList.remove("open-popup");
+			openOpn = true;
+		}
+
+	}
+
+	// function openPopup() {
+	// 	popup.classList.add("open-popup");
+	// }
+
+	// function closePopup() {
+	// 	popup.classList.remove("open-popup");
+	// }
+
 
 </script>
