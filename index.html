@@ -57,10 +57,10 @@
 			font-family: 'Rajdhani' !important;
 			/* font-family: "Plantin W01 Light", "Georgia", "Times", "Times New Roman", serif; */
 			/* font-family: "Plantin W01 Light"; */
-			font-size: 24px;
-			line-height: 24px;
-			font-size: 1.8rem;
-			line-height: 1.8rem;
+			/* font-size: 24px;
+			line-height: 24px; */
+			font-size: 1.5rem;
+			line-height: 2rem;
 			display: block;
 			color: #232323;
 			font-weight: 500;
@@ -69,9 +69,9 @@
 			right: 50%;
 			transform-origin: center right;
 			width: 50%;
-			height: 3.2rem;
-			line-height: 2.2rem;
-			margin-top: -2rem;
+			height: 2rem;
+			/* line-height: 2.2rem; */
+			/* margin-top: -2rem; */
 			text-align: left;
 			box-sizing: border-box;
 			opacity: 1;
@@ -173,6 +173,7 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			/* transition: 0.05s ease; */
 		}
 
 		@media (max-width: 768px) {
@@ -737,144 +738,151 @@
 	// });
 
 	// }
-	jQuery((function ($) {
-		var e = 200,
-			t = function e(t) {
-				var n, a = decodeURIComponent(window.location.search.substring(1)).split("&"),
-					o, r;
-				for (r = 0; r < a.length; r++)
-					if ((o = a[r].split("="))[0] === t) return void 0 === o[1] || o[1]
-			};
-		$(document).ready((function () {
-			function e() {
-				var e, t = $("#circle").find("b"),
-					a = t.length,
-					o = 360 / a,
-					r = 0;
-				for (n = 0; n < a; n++) {
-					var i = t[n];
-					TweenLite.set(i, {
-						rotation: r
-					}), r += o
-				}
-			}
+	// jQuery((function ($) {
+	// 	var e = 200,
+	// 		t = function e(t) {
+	// 			var n, a = decodeURIComponent(window.location.search.substring(1)).split("&"),
+	// 				o, r;
+	// 			for (r = 0; r < a.length; r++)
+	// 				if ((o = a[r].split("="))[0] === t) return void 0 === o[1] || o[1]
+	// 		};
+	// 	$(document).ready((function () {
+	// 		function e() {
+	// 			var e, t = $("#circle").find("b"),
+	// 				a = t.length,
+	// 				o = 360 / a,
+	// 				r = 0;
+	// 			for (n = 0; n < a; n++) {
+	// 				var i = t[n];
+	// 				TweenLite.set(i, {
+	// 					rotation: r
+	// 				}), r += o
+	// 			}
+	// 		}
 
-			function a() {
-				var e, t = $("#circle").find("b"),
-					a = t.length,
-					o = 360 / a,
-					r = 0;
-				for (n = 0; n < a; n++) {
-					var i = t[n];
-					TweenLite.to(i, 4, {
-						rotation: r,
-						ease: "Strong.easeInOut"
-					}), r += o
-				}
-			}
+	// 		function a() {
+	// 			var e, t = $("#circle").find("b"),
+	// 				a = t.length,
+	// 				o = 360 / a,
+	// 				r = 0;
+	// 			for (n = 0; n < a; n++) {
+	// 				var i = t[n];
+	// 				TweenLite.to(i, 4, {
+	// 					rotation: r,
+	// 					ease: "Strong.easeInOut"
+	// 				}), r += o
+	// 			}
+	// 		}
 
-			function o() {
-				var n = $("#circle"),
-					a = n.find("b").length;
-				e();
-				var o, i = (a - Math.round(Math.random() * a * .45 + .5 * a)) / a * 360,
-					c = new TimelineLite({
-						onComplete: function () {
-							Draggable.create(n, {
-								type: "rotation",
-								throwProps: !0
-							}), $("#circle b.clickable span").click((function (e) {
-								e.preventDefault();
-								var t = $(this).data("link");
-								window.open(t, '_blank');
-							})), $(window).on("resize", (function () {
-								var e;
-								$(window).width() < 1024 ? TweenLite.to(n, .1, {
-									scale: .7,
-									"margin-left": "-40rem"
-								}) : TweenLite.to(n, .1, {
-									scale: 0.8,
-									"margin-left": "-30rem"
-								})
-							}))
-						}
-					}),
-					l = t("p"),
-					s;
-				$(window).width() < 1024 ? l ? (n.css("transform", "scale(0.7)"), n.css("margin-left", "-40rem"), c.add(TweenLite.to(n, .5, {
-					opacity: 1
-				})), setTimeout((function () {
-					r(l)
-				}), 500)) : (n.css("transform", "scale(0.1)"), c.add(TweenLite.to(n, 1, {
-					opacity: 1,
-					delay: 1,
-					rotation: i
-				})), c.add(TweenLite.to(n, 1, {
-					scale: .7,
-					"margin-left": "-40rem"
-				}))) : l ? (n.css("transform", "scale(1)"), n.css("margin-left", "-8rem"), c.add(TweenLite.to(n, .5, {
-					opacity: 1
-				})), setTimeout((function () {
-					r(l)
-				}), 500)) : (n.css("transform", "scale(0.2)"), c.add(TweenLite.to(n, 1, {
-					opacity: 1,
-					delay: 1,
-					rotation: i
-				})), c.add(TweenLite.to(n, 1, {
-					scale: 0.85,
-					"margin-left": "-30rem"
-				})))
-			}
+	// 		function o() {
+	// 			var n = $("#circle"),
+	// 				a = n.find("b").length;
+	// 			e();
+	// 			var o, i = (a - Math.round(Math.random() * a * .45 + .5 * a)) / a * 360,
+	// 				c = new TimelineLite({
+	// 					onComplete: function () {
+	// 						Draggable.create(n, {
+	// 							type: "rotation",
+	// 							throwProps: !0
+	// 						}), $("#circle b.clickable span").click((function (e) {
+	// 							e.preventDefault();
+	// 							var t = $(this).data("link");
+	// 							window.open(t, '_blank');
+	// 						})), $(window).on("resize", (function () {
+	// 							var e;
+	// 							$(window).width() < 1024 ? TweenLite.to(n, .1, {
+	// 								scale: .7,
+	// 								// "margin-left": "-40rem"
+	// 							}) : TweenLite.to(n, .1, {
+	// 								scale: 0.8,
+	// 								// "margin-left": "-30rem"
+	// 								// "margin-left": "-90rem"
+	// 							})
+	// 						}))
+	// 					}
+	// 				}),
+	// 				l = t("p"),
+	// 				s;
+	// 			$(window).width() < 1024 ? l ? (n.css("transform", "scale(0.7)"),
+	// 				//  n.css("margin-left", "-40rem"),
+	// 				c.add(TweenLite.to(n, .5, {
+	// 					opacity: 1
+	// 				})), setTimeout((function () {
+	// 					r(l)
+	// 				}), 500)) : (n.css("transform", "scale(0.1)"), c.add(TweenLite.to(n, 1, {
+	// 					opacity: 1,
+	// 					delay: 1,
+	// 					rotation: i
+	// 				})), c.add(TweenLite.to(n, 1, {
+	// 					scale: .7,
+	// 					// "margin-left": "-40rem"
+	// 				}))) : l ? (n.css("transform", "scale(1)"),
+	// 					// n.css("margin-left", "-8rem"),
+	// 					c.add(TweenLite.to(n, .5, {
+	// 						opacity: 1
+	// 					})), setTimeout((function () {
+	// 						r(l)
+	// 					}), 500)) : (n.css("transform", "scale(0.2)"), c.add(TweenLite.to(n, 1, {
+	// 						opacity: 1,
+	// 						delay: 1,
+	// 						rotation: i
+	// 					})), c.add(TweenLite.to(n, 2, {
+	// 						scale: 0.85,
+	// 						// "left": "auto",
+	// 						"left": "20%"
+	// 						// "margin-left": "-30rem"
+	// 					})))
+	// 		}
 
-			function r(e) {
-				if (i != e && (i = e, $("#circle b").sort((function () {
-					return 10 * Math.random() > 5 ? 1 : -1
-				})).each((function () {
-					var e = $(this);
-					e.appendTo(e.parent()).fadeTo(500, .3)
-				})), "everyone" != e ? $("#circle b." + e).sort((function (e, t) {
-					return $(t).text().toUpperCase().localeCompare($(e).text().toUpperCase())
-				})).each((function () {
-					var e = $(this);
-					e.appendTo(e.parent()).fadeTo(500, 1)
-				})) : $("#circle b").fadeTo(500, 1), a()), "everyone" != e) {
-					var t = $("#circle b").length,
-						n = $("#circle b." + e).length;
-					if (n > 1) var o = Math.ceil(n / t * 360 / 2);
-					else var o = 5;
-					TweenLite.to($("#circle"), 2, {
-						rotation: o,
-						ease: "Strong.easeInOut"
-					})
-				}
-			}
-			// var i = "everyone";
-			// $(".person-overlay .close-person a").click((function () {
-			// 	$(".person-overlay:visible").fadeOut("fast")
-			// })), $(document).keyup((function (e) {
-			// 	27 == e.keyCode && $(".person-overlay:visible").fadeOut("fast")
-			// })), $("#people-categories-overlay .sub-menu a").click((function (e) {
-			// 	e.preventDefault();
-			// 	var t = $(this).data("arrange");
-			// 	$("#people-categories-overlay").fadeOut("fast", (function () {
-			// 		r(t)
-			// 	}))
-			// })), $("header.header a.arrange").click((function (e) {
-			// 	e.preventDefault(), $("#people-categories-overlay").fadeIn("fast"),
-			// 		$("body").addClass("overlay")
-			// })), $("#people-categories-overlay .close-people-categories a").click((function (e) {
-			// 	e.preventDefault(), $("#people-categories-overlay").fadeOut("fast"),
-			// 		$("body").removeClass("overlay")
-			// })),
-			o(), $(window).on("resize", (function () {
-				var e = 1.2 * $(window).width(),
-					t = 1.2 * $(window).height(),
-					n = Math.max(e, t)
-			}))
-		}))
-	}));
+	// 		function r(e) {
+	// 			if (i != e && (i = e, $("#circle b").sort((function () {
+	// 				return 10 * Math.random() > 5 ? 1 : -1
+	// 			})).each((function () {
+	// 				var e = $(this);
+	// 				e.appendTo(e.parent()).fadeTo(500, .3)
+	// 			})), "everyone" != e ? $("#circle b." + e).sort((function (e, t) {
+	// 				return $(t).text().toUpperCase().localeCompare($(e).text().toUpperCase())
+	// 			})).each((function () {
+	// 				var e = $(this);
+	// 				e.appendTo(e.parent()).fadeTo(500, 1)
+	// 			})) : $("#circle b").fadeTo(500, 1), a()), "everyone" != e) {
+	// 				var t = $("#circle b").length,
+	// 					n = $("#circle b." + e).length;
+	// 				if (n > 1) var o = Math.ceil(n / t * 360 / 2);
+	// 				else var o = 5;
+	// 				TweenLite.to($("#circle"), 2, {
+	// 					rotation: o,
+	// 					ease: "Strong.easeInOut"
+	// 				})
+	// 			}
+	// 		}
+	// 		// var i = "everyone";
+	// 		// $(".person-overlay .close-person a").click((function () {
+	// 		// 	$(".person-overlay:visible").fadeOut("fast")
+	// 		// })), $(document).keyup((function (e) {
+	// 		// 	27 == e.keyCode && $(".person-overlay:visible").fadeOut("fast")
+	// 		// })), $("#people-categories-overlay .sub-menu a").click((function (e) {
+	// 		// 	e.preventDefault();
+	// 		// 	var t = $(this).data("arrange");
+	// 		// 	$("#people-categories-overlay").fadeOut("fast", (function () {
+	// 		// 		r(t)
+	// 		// 	}))
+	// 		// })), $("header.header a.arrange").click((function (e) {
+	// 		// 	e.preventDefault(), $("#people-categories-overlay").fadeIn("fast"),
+	// 		// 		$("body").addClass("overlay")
+	// 		// })), $("#people-categories-overlay .close-people-categories a").click((function (e) {
+	// 		// 	e.preventDefault(), $("#people-categories-overlay").fadeOut("fast"),
+	// 		// 		$("body").removeClass("overlay")
+	// 		// })),
+	// 		o(), $(window).on("resize", (function () {
+	// 			var e = 1.2 * $(window).width(),
+	// 				t = 1.2 * $(window).height(),
+	// 				n = Math.max(e, t)
+	// 		}))
+	// 	}))
+	// }));
 
-
+	jQuery((function ($) { var e = 200, t = function e(t) { var n, a = decodeURIComponent(window.location.search.substring(1)).split("&"), o, r; for (r = 0; r < a.length; r++)if ((o = a[r].split("="))[0] === t) return void 0 === o[1] || o[1] }; $(document).ready((function () { function e() { var e, t = $("#circle").find("b"), a = t.length, o = 360 / a, r = 0; for (n = 0; n < a; n++) { var i = t[n]; TweenLite.set(i, { rotation: r }), r += o } } function a() { var e, t = $("#circle").find("b"), a = t.length, o = 360 / a, r = 0; for (n = 0; n < a; n++) { var i = t[n]; TweenLite.to(i, 4, { rotation: r, ease: "Strong.easeInOut" }), r += o } } function o() { var n = $("#circle"), a = n.find("b").length; e(); var o, i = (a - Math.round(Math.random() * a * .45 + .5 * a)) / a * 360, c = new TimelineLite({ onComplete: function () { Draggable.create(n, { type: "rotation", throwProps: !0 }), $("#circle b.clickable span").click((function (e) { e.preventDefault(); var t = $(this).data("link"); window.open(t, '_blank'); })), $(window).on("resize", (function () { var e; $(window).width() < 1024 ? TweenLite.to(n, .1, { scale: .7, "margin-left": "-40rem" }) : TweenLite.to(n, .1, { scale: 1, "margin-left": "-8rem" }) })) } }), l = t("p"), s; $(window).width() < 1024 ? l ? (n.css("transform", "scale(0.7)"), n.css("margin-left", "-40rem"), c.add(TweenLite.to(n, .5, { opacity: 1 })), setTimeout((function () { r(l) }), 500)) : (n.css("transform", "scale(0.1)"), c.add(TweenLite.to(n, 1, { opacity: 1, delay: 1, rotation: i })), c.add(TweenLite.to(n, 1, { scale: .7, "margin-left": "-40rem" }))) : l ? (n.css("transform", "scale(1)"), n.css("margin-left", "-8rem"), c.add(TweenLite.to(n, .5, { opacity: 1 })), setTimeout((function () { r(l) }), 500)) : (n.css("transform", "scale(0.2)"), c.add(TweenLite.to(n, 1, { opacity: 1, delay: 1, rotation: i })), c.add(TweenLite.to(n, 1, { scale: 1.1, "margin-left": "-8rem" }))) } function r(e) { if (i != e && (i = e, $("#circle b").sort((function () { return 10 * Math.random() > 5 ? 1 : -1 })).each((function () { var e = $(this); e.appendTo(e.parent()).fadeTo(500, .3) })), "everyone" != e ? $("#circle b." + e).sort((function (e, t) { return $(t).text().toUpperCase().localeCompare($(e).text().toUpperCase()) })).each((function () { var e = $(this); e.appendTo(e.parent()).fadeTo(500, 1) })) : $("#circle b").fadeTo(500, 1), a()), "everyone" != e) { var t = $("#circle b").length, n = $("#circle b." + e).length; if (n > 1) var o = Math.ceil(n / t * 360 / 2); else var o = 5; TweenLite.to($("#circle"), 2, { rotation: o, ease: "Strong.easeInOut" }) } } var i = "everyone"; $(".person-overlay .close-person a").click((function () { $(".person-overlay:visible").fadeOut("fast") })), $(document).keyup((function (e) { 27 == e.keyCode && $(".person-overlay:visible").fadeOut("fast") })), $("#people-categories-overlay .sub-menu a").click((function (e) { e.preventDefault(); var t = $(this).data("arrange"); $("#people-categories-overlay").fadeOut("fast", (function () { r(t) })) })), $("header.header a.arrange").click((function (e) { e.preventDefault(), $("#people-categories-overlay").fadeIn("fast"), $("body").addClass("overlay") })), $("#people-categories-overlay .close-people-categories a").click((function (e) { e.preventDefault(), $("#people-categories-overlay").fadeOut("fast"), $("body").removeClass("overlay") })), o(), $(window).on("resize", (function () { var e = 1.2 * $(window).width(), t = 1.2 * $(window).height(), n = Math.max(e, t) })) })) }));
 
 	let popup = document.getElementById("popup");
 
@@ -888,16 +896,5 @@
 			popup.classList.remove("open-popup");
 			openOpn = true;
 		}
-
 	}
-
-	// function openPopup() {
-	// 	popup.classList.add("open-popup");
-	// }
-
-	// function closePopup() {
-	// 	popup.classList.remove("open-popup");
-	// }
-
-
 </script>
